@@ -27,8 +27,10 @@ coffees_list : list[Coffee] = [
 @app.get("/")
 def get_message():
     return {
-        "message": "Hello, welcome to Coffee shop API!"
+        "message": "Welcome to Coffee Shop API!"
     }
 
 
-
+@app.get("/coffees")
+def get_coffees() -> list[Coffee]:
+    return coffees_list
